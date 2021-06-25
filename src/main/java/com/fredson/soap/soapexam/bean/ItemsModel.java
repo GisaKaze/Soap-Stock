@@ -3,6 +3,7 @@ package com.fredson.soap.soapexam.bean;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class ItemsModel {
@@ -13,9 +14,11 @@ public class ItemsModel {
     private String itemCode;
     private String status;
     private int price;
-    private String supplier;
 
-    public ItemsModel(int id, String name, String itemCode, String status, int price, String supplier) {
+    @OneToOne
+    private SuppliersModel supplier;
+
+    public ItemsModel(int id, String name, String itemCode, String status, int price, SuppliersModel supplier) {
         super();
         this.id = id;
         this.name = name;

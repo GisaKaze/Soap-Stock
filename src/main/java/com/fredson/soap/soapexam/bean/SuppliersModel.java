@@ -1,27 +1,36 @@
 package com.fredson.soap.soapexam.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class SuppliersModel {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String email;
     private String mobile;
 
+
+
     public SuppliersModel(int id, String name, String email, String mobile) {
-        super();
         this.id = id;
         this.name = name;
         this.email = email;
         this.mobile = mobile;
     }
-    public SuppliersModel(){
-        super();
+
+    public SuppliersModel() {
+
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
